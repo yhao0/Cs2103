@@ -1,10 +1,11 @@
 /*
+******
  * ==============NOTE TO STUDENTS======================================
  * This class is not written in pure Object-Oriented fashion. That is 
  * because we haven't covered OO theory yet. Yes, it is possible to 
  * write non-OO code using an OO language.
  * ====================================================================
- */
+ *********/
 
 import java.util.Scanner;
 /**
