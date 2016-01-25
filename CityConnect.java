@@ -1,3 +1,4 @@
+
 /*
 ******
  * ==============NOTE TO STUDENTS======================================
@@ -101,12 +102,20 @@ public class CityConnect {
 	public static void main(String[] args) {
 		showToUser(WELCOME_MESSAGE);
 		while (true) {
-			System.out.print("Enter command:");
-			String command = scanner.nextLine();
-			String userCommand = command;
-			String feedback = executeCommand(userCommand);
-			showToUser(feedback);
+			run();
 		}
+	}
+	
+	/*
+	 * ========NOTE TO MYSELF=================
+	 * Refactor here
+	 */
+	private static void run() {
+		System.out.print("Enter command:");
+		String command = scanner.nextLine();
+		String userCommand = command;
+		String feedback = executeCommand(userCommand);
+		showToUser(feedback);
 	}
 
 	/*
@@ -201,6 +210,15 @@ public class CityConnect {
 
 		int position = getPositionOfExistingRoute(newStartLocation, newEndLocation);
 
+		return positionExistOrNot(newStartLocation, newEndLocation, position);
+
+	}
+	
+	/*
+	 * =======NOTE TO MYSELF==========
+	 * REFACTOR HERE
+	 */
+	private static String positionExistOrNot(String newStartLocation, String newEndLocation, int position) {
 		if (position == NOT_FOUND) {
 			return String.format(MESSAGE_NO_ROUTE, newStartLocation,
 					newEndLocation);
@@ -210,7 +228,6 @@ public class CityConnect {
 			return String.format(MESSAGE_DISTANCE, newStartLocation, newEndLocation,
 					route[position][STORAGE_POSITION_DISTANCE]);
 		}
-
 	}
 
 	/**
